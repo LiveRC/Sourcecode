@@ -1,0 +1,1150 @@
+/* {{Catégorisation JS}} */
+
+
+/* **** STYLES GLOBAUX **** */
+
+#LiveRCContainer {
+   font-size:13px;
+   position:fixed;
+   top:0;
+   left:0;
+   z-index:3000;
+   background-color:gray !important;
+   cursor:default !important;
+}
+
+#LiveRCContainer input {
+   padding:0;
+   cursor:pointer !important;
+}
+#LiveRCContainer input[disabled="disabled"]{
+   cursor:default !important;
+}
+
+#LiveRCContainer input[type="text"]{
+   cursor:text !important;
+}
+
+#FixedTitlePanel {
+   position:fixed;
+   top:0;
+   left:0;
+   z-index:5000;
+   background-color: LightGrey;
+   border: 2px solid gray; 
+   margin:0;
+   padding:0;
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+   width:152px;
+}
+
+#FixedTitlePanel td {
+   padding:2px;
+}
+
+#FixedTopPanel {
+   display:none;
+}
+
+#FixedBottomPanel {
+   display:none;
+   position:fixed;
+   bottom:0;
+   left:0;
+   z-index:5000;
+   width:100%;
+}
+
+#OutFixedBottomPanel {
+   display:none;
+   position:fixed;
+   bottom:0;
+   left:0;
+   z-index:5000;
+   width:99.4%;
+   padding:2px;
+   background-color: LightGrey;
+   border: 2px solid gray; 
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+}
+
+/* Barre de titre */
+
+#LiveRCTitle {
+    text-align:center;
+}
+
+#LiveRCTitle .error {
+    font-size: 11px;
+}
+
+/* Barre de contrôle des RC */
+
+#livePreviewFoot {
+    margin-top:2px;
+    padding:0;
+    display:none;
+    border-top: 1px solid gray; 
+}
+
+#livePreviewFoot td {
+   white-space:nowrap !important;
+}
+
+#livePreviewFoot form {
+   display:inline !important;
+}
+#livePreviewFoot input {
+   padding: 0;
+}
+
+td.noHover:hover {
+   background:none !important; 
+   cursor:default !important;
+}
+
+.RCFilterCheckList {
+  list-style:none;
+  text-align:left;
+  background-color: LightGrey;
+  border: 2px solid gray; 
+  position:relative;
+  float:left;
+  white-space:nowrap;
+  width:auto;
+}
+
+.RCFilterCheckList li {
+  padding-left:10px; 
+  padding-right:10px; 
+}
+
+.RCFilterCheckList input, .RCFilterCheckList select {
+  font-size:10px;
+}
+
+.TwoColumsCheckList {
+  -moz-column-count:2;
+  -webkit-column-count:2;
+  column-count:2;  
+}
+
+.SuggestionExist img {
+  margin-top: -3px;
+}
+
+/* Styles RC */
+
+
+#liveRC_RCList {
+    display:none;
+    width:100%;  
+    border-top:1px solid gray;
+    background: url("//upload.wikimedia.org/wikipedia/commons/thumb/d/d0/LiveRC_centered.png/1000px-LiveRC_centered.png") no-repeat scroll center center transparent;
+}
+#divTabRC {
+}
+#tabRC {
+    font-size:11px;
+    width:100%;
+    background-color:#E0E0EE;
+    border-bottom:1px solid gray;
+}
+
+.rcLine td, .rcLine th {
+    background-color:#F0F0FF; 
+    border-top:1px solid gray;
+}
+
+#tabRC .th1RC, #tabRC .td2RC, #tabRC .td3RC, #tabRC .td4RC  {
+  padding-left:3px;
+  padding-right:3px;
+  border-right:1px dotted silver;
+}
+#tabRC .th1RC {
+    border-left:1px solid gray;
+}
+#tabRC .td5RC {
+    border-right:1px solid gray;
+
+}
+#tabRC .MiniDiffPreviewTD {
+    border:1px solid gray;
+    border-top:1px solid silver;
+    background-color:white !important; 
+    font-size:10px !important;
+}
+#tabRC .MiniDiffClosePreviewTD {
+    border-bottom:1px solid gray !important;
+}
+
+.MiniDiffPreviewHidden #tabRC .MiniDiffPreviewTR {
+    display:none !important;
+}
+
+
+/* **** BOUTONS **** */
+
+#LiveRCButtons {
+    white-space:nowrap;
+}
+#LiveRCButtons img {
+   background:none repeat scroll 0 0 IndianRed;
+   border:1px solid red;
+   -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; 
+}
+#LiveRCButtons .OnButton img {
+   background:none repeat scroll 0 0 GreenYellow;
+   border:1px solid green;
+}
+#LiveRCButtons a:hover img {
+   background:none repeat scroll 0 0 silver;
+   border:1px solid gray;
+}
+
+#LiveRCButtonOff {
+   display:inline;
+}
+#LiveRCButtonOn {
+   display:none;
+}
+
+#LiveRCTchatButtonOff {
+   display:inline;   
+}
+#LiveRCTchatButtonOn {
+   display:none;
+}
+
+#LiveRCDebugButtonOff {
+   display:inline;   
+}
+#LiveRCDebugButtonOn {
+   display:none;
+}
+
+#LiveRCFollowButtonOff {
+   display:inline;   
+}
+#LiveRCFollowButtonOn {
+   display:none;
+}
+
+#LiveRCFooterButtonOff {
+   display:inline;
+}
+#LiveRCFooterButtonOn {
+   display:none !important;
+}
+
+#LiveRCConfigButtonOn {
+   display:none;
+}
+#LiveRCConfigButtonOff {
+   display:inline;
+}
+
+#LiveRCPreviewButtonOff {
+   display:inline;   
+}
+#LiveRCPreviewButtonOn {
+   display:none;
+}
+
+#LiveRCHistoryButtonOff {
+   display:inline;   
+}
+#LiveRCHistoryButtonOn {
+   display:none;
+}
+
+#LiveRCRCTableButtonOn {
+    display:none;
+}
+#LiveRCRCTableButtonOff {
+    display:inline;
+}
+
+
+
+
+/* **** AUTRES COMPOSANTS **** */
+
+#n-liveRC {
+
+}
+#n-liveRC ul {
+  font-size: 80%;
+  line-height: 0.8em;
+  margin-top: -0.5em;
+}
+
+
+#LiveRC_History, #liveFollow, #LiveRC_Preview {
+   margin:0px;
+   padding:2px;
+   background-color: LightGrey;
+   border: 2px solid gray; 
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+}
+
+#FixedTopPanel #LiveRC_Preview, #FixedTopPanel #LiveRC_History {
+   margin:0px;
+   padding:2px;
+   background-color: LightGrey;
+   border:none !important; 
+   -moz-border-radius:0 !important; -webkit-border-radius:0 !important; border-radius:0 !important; 
+}
+
+/* Fenêtre de débogage */
+
+#liveDebug {
+   display:none;
+   position:fixed;
+   z-index:11000;
+   left:0;
+   bottom:0;
+   width:99.4%;
+   padding:2px;
+   margin:0;
+   background-color: LightGrey;
+   border: 2px solid gray; 
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+}
+
+
+#liveDebugContent {
+    height:250px;
+    overflow:auto;
+    background-color: white;
+    border: 1px dotted silver; 
+}
+
+#liveDebug .NoAjax li.Ajax {
+    display:none;
+}
+
+#liveDebug .OnlyErrors li.noerror {
+    display:none;
+}
+
+#liveDebugContent li {
+    border-bottom: 1px dotted silver; 
+}
+
+#LiveRCAlert {
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:25000;
+  margin:0;
+  padding:0;
+  list-style:none;
+  cursor:default !important;
+}
+ 
+#LiveRCAlert li {
+  margin:0;
+  padding:0;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  background-color:white;
+  border:1px solid #DDDDDD;
+  font-size:12px !important;
+}
+ 
+#LiveRCAlert li li {
+  background-color:#F0F0F0;
+}
+
+#LiveRCAlert fieldset {
+  margin:0;
+  margin-top: 0.5em;
+  padding:0.5em;
+  background-color: #F9F9F9;
+}
+ 
+#LiveRCAlert input {
+  padding:0;
+  cursor:pointer !important;
+}
+
+#LiveRCAlert input[type="text"]{
+   cursor:text !important;
+}
+
+
+.LiveRC_Opacity_100 {
+  opacity:1;
+  filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_95 {
+  opacity:0.95;
+  filter:alpha(opacity=95); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_90 {
+  opacity:0.9;
+  filter:alpha(opacity=90); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_85 {
+  opacity:0.85;
+  filter:alpha(opacity=85); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_80 {
+  opacity:0.8;
+  filter:alpha(opacity=80); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_75 {
+  opacity:0.75;
+  filter:alpha(opacity=75); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_70 {
+  opacity:0.7;
+  filter:alpha(opacity=70); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_65 {
+  opacity:0.65;
+  filter:alpha(opacity=65); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_60 {
+  opacity:0.6;
+  filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_55 {
+  opacity:0.55;
+  filter:alpha(opacity=55); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_50 {
+  opacity:0.5;
+  filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_45 {
+  opacity:0.45;
+  filter:alpha(opacity=45); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_40 {
+  opacity:0.4;
+  filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_35 {
+  opacity:0.35;
+  filter:alpha(opacity=35); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_30 {
+  opacity:0.3;
+  filter:alpha(opacity=30); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_25 {
+  opacity:0.25;
+  filter:alpha(opacity=25); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_20 {
+  opacity:0.2;
+  filter:alpha(opacity=20); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_15 {
+  opacity:0.15;
+  filter:alpha(opacity=15); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_10 {
+  opacity:0.1;
+  filter:alpha(opacity=10); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_5 {
+  opacity:0.05;
+  filter:alpha(opacity=5); /* For IE8 and earlier */
+}
+.LiveRC_Opacity_0 {
+  opacity:0;
+  filter:alpha(opacity=0); /* For IE8 and earlier */
+}
+
+.LiveRC_MenuContainer {
+    border:none; 
+    padding:2px;
+    padding-bottom:0;
+    margin-left:2px;
+    margin-right:2px;
+}
+
+.LiveRC_MenuAnchor {
+    min-height:20px;
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    padding:2px;
+    background-color:DarkGray !important;
+    border:1px solid DimGray;
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+}
+
+.LiveRC_MenuAnchor input {
+    font-size: 10px;
+    padding:0;
+}
+.LiveRC_MenuAnchor select {
+    font-size: 11px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.LiveRC_MenuAnchor form {
+   display:inline !important;
+}
+
+#livePreviewFirstTitle {
+   font-size:16px;
+}
+
+.LiveRC_MenuContent {
+    margin:3px;
+    padding:3px;
+    border:1px solid LightGrey;
+    text-align:left;
+    font-size:80%;
+}
+
+
+
+/* **** Styles Tchat **** */
+
+#liveTchat {
+   display:none;
+   position:fixed;
+   z-index:10000;
+   left:0;
+   width:99.4%;
+   padding:2px;
+   background-color: LightGrey;
+   border: 2px solid gray; 
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+}
+
+#liveTchat .LiveRC_MenuContent {
+   margin:0;
+   padding:0;
+}
+
+#liveTchatResizeAnchor {
+   float:right;
+   position:relative;
+   bottom:0;
+   right:0;
+   width:60px;
+   height:60px;
+   margin:-54px 0 0 0;
+   padding:0;
+   -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; 
+}
+
+#NewWindowTchatLink {
+   font-size:11px;
+   float:right;
+}
+
+
+
+/* Styles Menu de paramétrage */
+
+#LiveRC_ParamMenu {
+}
+.LiveRC_ParamMenuPart {
+   height:200px;
+   overflow-y:auto;
+}
+.LiveRC_ParamMenuContent p {
+    text-align:center;
+}
+.LiveRC_ParamMenuContent input {
+    padding:0;
+}
+.LiveRC_ParamMenuContent fieldset {
+    padding:3px;
+}
+ 
+#ToggleButtons input, .ActionButtons input {
+  font-size:11px;
+}
+
+#LiveRC_ParamMenu ul {
+    list-style:none;
+    list-image:none;
+    margin:0;
+}
+ 
+.ParamMenuLi {
+    border:1px solid silver;
+    background-color:#E8E8FF;
+    margin:0.2em;
+    padding:0.1em;
+}
+
+.ParamMenuLiCustom {
+  color:red !important;
+}
+
+.lrcIcons_Label, .Texts_Label {
+  font-size:130%;
+}
+
+#LiveRC_OptionsContentInput_lstParamMenuTabs, #LiveRC_OptionsContentInput_ContactListLegend, #LiveRC_OptionsContentInput_HiddenListLegend, #LiveRC_OptionsContentInput_ExtensionsLegend, #LiveRC_OptionsContentInput_lrcCSSstyles {
+  margin-left:0.5em;
+}
+
+#MWConfigSaveButton {
+  margin-left:1em;
+  font-weight:bold;
+  color:#800000;
+}
+
+
+/* Styles fenêtre de prévisualisation */
+
+#LiveRC_Preview {
+   display:none;
+}
+#livePreviewTitle {
+   font-size:12px;
+}
+
+#livePreviewTitle ul {
+   display:inline !important;
+   list-style:none; 
+   margin:0;
+   padding:0;
+}
+#livePreviewTitle li {
+   display:inline !important;
+   list-style:none; 
+   margin:0;
+   padding:0;
+   margin-right:3px;
+}
+#livePreviewTitle a {
+   margin:0;
+   padding:2px;
+   margin-right:2px;
+   border:1px solid transparent;
+   -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; 
+}
+
+#livePreview {
+    height:250px;
+    overflow:auto;
+    background-color:white !important;
+}
+
+#FixedTopPanel {
+    border-top:1px solid gray;
+    padding:0;
+    padding-top:2px;
+    margin:0;
+    display:none;
+}
+.LiveRCPreviewOnBottom #FixedTopPanel {
+    display:none !important;
+}
+
+/* Styles Listes */
+
+#liveFollow {
+   display:none;
+}
+
+#LiveRC_FollowContent { 
+   font-size:13px;
+   margin-top:0;
+}
+#LiveRC_FollowContent fieldset {
+    margin-top:0;
+}
+#LiveRC_FollowContent .VResize {
+    height:100px;
+    overflow-y:auto;
+}
+
+#FollowAnchor {
+    border:1px solid gray !important;
+    background-color:silver !important;
+    text-align:center;
+}
+
+#LiveRC_FollowButtons {
+    text-align:center;
+    padding-bottom: 5px;
+    border-bottom:1px solid grey;
+}
+#LiveRC_FollowButtons input {
+    font-size:11px;
+    font-weight:bold;
+    padding:0; 
+    margin:0; 
+}
+
+#liveFollow th {
+    padding-left:0.5em;
+}
+#liveFollow td {
+    border-left:1px solid grey;
+}
+
+#liveFollow ul {
+    list-style:none; 
+    padding:0; 
+    margin:0; 
+}
+
+#liveFollow ul {
+    list-style:none; 
+    padding:0; 
+    margin:0; 
+}
+#liveFollow li {
+    list-style:none; 
+    padding:0; 
+    margin:0; 
+}
+
+.FollowList {
+    margin:0; 
+    padding:0; 
+    margin-left:20px; 
+    font-size:11px !important;
+}
+.FollowSublist {
+    margin-left:20px; 
+    font-size:9px !important;
+}
+#liveFollow li li {
+    list-style:none; 
+    padding:0; 
+    margin-left:20px; 
+}
+
+
+
+/* Styles Menu d'historique */
+
+#LiveRC_History {
+   display:none;
+   font-size:13px;
+}
+
+
+
+
+
+#OtherContainer {
+   display:block;
+   background-color:#FFFFFF !important;
+}
+
+.MouseMoveFunctionRunning * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* MODE LIVERC */
+
+
+.FixedLiveRCContainer {
+   background-color:#FFFFFF !important;
+}
+.FixedLiveRCContainer #LiveRCTitle {
+   display:table-cell !important;
+}
+.FixedLiveRCContainer #LiveRCUserInfos {
+   display:table-cell !important;
+}
+
+.FixedLiveRCContainer #livePreviewFoot {
+   display:none;
+}
+.FixedLiveRCContainer #FixedTitlePanel {
+   width:99.7% !important;
+}
+
+.FixedLiveRCContainer #OtherContainer {
+   display:none !important;
+}
+.FixedLiveRCContainer #LiveRCButtonOff {
+   display:none !important;
+}
+.FixedLiveRCContainer #LiveRCButtonOn {
+   display:inline !important;
+}
+
+
+
+
+/* MODE TCHAT */
+
+
+.LiveRCTchatDisplayed #liveTchat {
+   display:block !important;
+}
+.LiveRCTchatDisplayed #LiveRCTchatButtonOff {
+   display:none !important;
+}
+.LiveRCTchatDisplayed #LiveRCTchatButtonOn {
+   display:inline !important;
+}
+
+
+
+
+/* MODE DEBUG */
+
+
+.LiveRCDebugDisplayed #liveDebug {
+   display:block !important;
+}
+.LiveRCDebugDisplayed #LiveRCDebugButtonOff {
+   display:none !important;
+}
+.LiveRCDebugDisplayed #LiveRCDebugButtonOn {
+   display:inline !important;
+}
+
+
+
+
+/* MODE CONFIG */
+
+.LiveRCConfigDisplayed #LiveRCConfigButtonOn {
+   display:inline !important;
+
+}
+.LiveRCConfigDisplayed #LiveRCConfigButtonOff {
+   display:none !important;
+}
+.LiveRCConfigDisplayed #OutFixedBottomPanel {
+   display:block !important;
+}
+
+.LiveRCConfigDisplayed #FixedBottomPanel {
+   display:none !important;
+}
+
+
+
+
+/* MODE RC */
+
+
+.LiveRCRCTableDisplayed #LiveRCRCTableButtonOn {
+    display:inline !important;
+}
+.LiveRCRCTableDisplayed #LiveRCRCTableButtonOff {
+    display:none !important;
+}
+.LiveRCRCTableDisplayed #liveRC_RCList, .LiveRCRCTableDisplayed #livePreviewFoot {
+    display:block;
+}
+
+
+/* MODE PREVISUALISATION */
+
+
+.LiveRCPreviewDisplayed #LiveRC_Preview {
+   display:block !important;
+}
+.LiveRCPreviewDisplayed #LiveRCPreviewButtonOff {
+   display:none !important;
+}
+.LiveRCPreviewDisplayed #LiveRCPreviewButtonOn {
+   display:inline !important;
+}
+.LiveRCPreviewDisplayed #FixedBottomPanel {
+   display:block;
+}
+.LiveRCPreviewDisplayed #FixedTopPanel {
+    display:block;
+}
+
+
+/* MODE LISTES */
+
+.LiveRCLiveFollowDisplayed #LiveRCFollowButtonOff {
+   display:none !important;
+}
+.LiveRCLiveFollowDisplayed #LiveRCFollowButtonOn {
+   display:inline !important;
+}
+.LiveRCLiveFollowDisplayed #liveFollow {
+   display:block !important;
+}
+.LiveRCLiveFollowDisplayed #FixedBottomPanel {
+   display:block;
+}
+
+
+/* MODE HISTORIQUE */
+
+.LiveRCHistoryDisplayed #LiveRCHistoryButtonOff {
+   display:none !important;   
+}
+.LiveRCHistoryDisplayed #LiveRCHistoryButtonOn {
+   display:inline !important;
+}
+.LiveRCHistoryDisplayed #LiveRC_History {
+   display:block !important;
+}
+.LiveRCHistoryDisplayed #FixedBottomPanel {
+   display:block;
+}
+.LiveRCHistoryDisplayed #FixedTopPanel {
+    display:block;
+}
+
+/* Code transféré depuis la Common.css en déc. 2011*/
+
+table.creator {
+ text-align:left;
+ border-collapse:collapse;
+ background:#F0F0FF;
+} /* monobookocentré */
+ 
+table.creator th {
+ background:#E0E0EE;
+ vertical-align:top;
+} /* monobookocentré */
+ 
+table.creator td {
+ background:#F0F0FF;
+ vertical-align:top;
+} /* monobookocentré */
+ 
+table.creator td.creator-name {
+ font-weight:bold;
+}
+
+/* adaptation contenus spéciaux */
+
+.LiveRCRunning  #coordinates {
+  margin-top: 4.5em !important;
+}
+.LiveRCRunning  #p-logo a {
+  background-image: url("//upload.wikimedia.org/wikipedia/commons/thumb/b/b2/LiveRC.svg/150px-LiveRC.svg.png") !important;
+}
+.LiveRCLoading  #p-logo a {
+  background-image: url("//upload.wikimedia.org/wikipedia/commons/f/f8/LiveRC-150px.gif") !important;
+}
+.LiveRCRunning  #blockip-help {
+  display: none !important; 
+}
+.LiveRCRunning .mw-editsection {
+  display: none !important; 
+}
+
+
+/* casser les longues suites de caractères dans les noms de page ou d'utilisateur */
+
+.lrc_ArticleLink, .lrc_EditorLink, #livePreview .mw-userlink {
+  word-break:break-all;
+}
+
+/* casser les longues suites de caractères dans les diffs */
+
+#livePreview diff-context, #livePreview diff-deletedline, #livePreview diff-addedline, .MiniDiffPreviewContent diff-context,  .MiniDiffPreviewContent diff-deletedline,  .MiniDiffPreviewContent diff-addedline, {
+  word-break:break-all;
+}
+
+
+/* ================== STYLES PERSONNALISABLES ================================= */
+
+
+/* **** HIGHLIGHT **** */
+
+#livePreviewFoot td:hover {
+   background-color:silver; 
+}
+
+.RCFilterCheckList li:hover {
+  background-color:silver !important; 
+}
+
+#liveFollow li:hover {
+    background-color:silver !important; 
+}
+
+#liveFollow li li:hover{
+    background-color:DarkGray !important; 
+}
+
+#livePreviewTitle a:hover {
+    border:1px solid grey !important;
+    background-color:silver !important;
+}
+
+.ParamMenuLi:hover {
+    border:1px solid gray !important;
+    background-color:silver !important;
+}
+
+#liveDebugContent li:hover {
+    background-color: silver; 
+}
+
+#liveDebugContent li:hover .TS {
+    color:red;
+}
+#tabRC .rcLine:hover { 
+    background-color:silver !important; 
+    color:black !important;
+}
+#tabRC .rcLine:hover td, #tabRC .rcLine:hover th { 
+    background-color:silver !important; 
+}
+#tabRC .rcLine:hover td:hover, #tabRC .rcLine:hover th:hover { 
+    background-color:DarkGray !important; 
+}
+
+/* **** BACKGROUNDS **** */
+
+#TitleTable {	
+    background-image: url("//upload.wikimedia.org/wikipedia/commons/b/ba/Double_Gradient_60px_V.png");
+    background-position: center bottom;	
+    background-repeat: repeat;
+}
+
+.LiveRC_MenuAnchor {
+    background-image: url("//upload.wikimedia.org/wikipedia/commons/c/cc/Double_Gradient_60px_V_50%25.png");
+    background-position: center top;
+    background-repeat: repeat;
+}
+ 
+#livePreviewFoot, #livePreviewFoot td:hover {
+    background-image: url("//upload.wikimedia.org/wikipedia/commons/b/ba/Double_Gradient_60px_V.png");
+    background-position: center top;
+    background-repeat: repeat;
+} 
+
+#tabRC .th0RC {
+    background-image: url("//upload.wikimedia.org/wikipedia/commons/8/8c/Double_Gradient_60px_H.png");
+    background-position: center top;
+    background-repeat: repeat;
+}
+
+#tabRC .th1RC, #tabRC .td2RC, #tabRC .td3RC, #tabRC .td4RC, #tabRC .td5RC {
+    background-image: url("//upload.wikimedia.org/wikipedia/commons/2/2f/Double_Gradient_60px.png");
+    background-position: center top;
+    background-repeat: repeat;
+} 
+
+
+/* **** RC STATES **** */
+ 
+.RcFeedback           .th1RC, .RcFeedback           .td2RC, .RcFeedback           .td3RC, .RcFeedback           .td4RC { background-color:#AA9E60; } 
+.RcAbFilter           .th1RC, .RcAbFilter           .td2RC, .RcAbFilter           .td3RC, .RcAbFilter           .td4RC { background-color:#FFBE60; } 
+.RcUpload             .th1RC, .RcUpload             .td2RC, .RcUpload             .td3RC, .RcUpload             .td4RC { background-color:#D1CAFA; } 
+.RcNewUser            .th1RC, .RcNewUser            .td2RC, .RcNewUser            .td3RC, .RcNewUser            .td4RC { background-color:#C6FF6D; } 
+.RcBlock              .th1RC, .RcBlock              .td2RC, .RcBlock              .td3RC, .RcBlock              .td4RC { background-color:#EECC84; } 
+.RcDelete             .th1RC, .RcDelete             .td2RC, .RcDelete             .td3RC, .RcDelete             .td4RC { background-color:#E7CAA7; } 
+.RcMove               .th1RC, .RcMove               .td2RC, .RcMove               .td3RC, .RcMove               .td4RC { background-color:#FDC5FF; } 
+.RcProtect            .th1RC, .RcProtect            .td2RC, .RcProtect            .td3RC, .RcProtect            .td4RC { background-color:#B2BCC6; } 
+.RcRights             .th1RC, .RcRights             .td2RC, .RcRights             .td3RC, .RcRights             .td4RC { background-color:#FF8080; } 
+.RcThanks             .th1RC, .RcThanks             .td2RC, .RcThanks             .td3RC, .RcThanks             .td4RC { background-color:pink; } 
+.RcRenameuser         .th1RC, .RcRenameuser         .td2RC, .RcRenameuser         .td3RC, .RcRenameuser         .td4RC { background-color:MediumAquamarine; }
+.RcMassMessage        .th1RC, .RcMassMessage        .td2RC, .RcMassMessage        .td3RC, .RcMassMessage        .td4RC { background-color:darkGrey; } 
+.RcPagetriageDeletion .th1RC, .RcPagetriageDeletion .td2RC, .RcPagetriageDeletion .td3RC, .RcPagetriageDeletion .td4RC { background-color:lightblue; }
+.RcPagetriageCuration .th1RC, .RcPagetriageCuration .td2RC, .RcPagetriageCuration .td3RC, .RcPagetriageCuration .td4RC { background-color:lightblue; }
+.RcReview             .th1RC, .RcReview             .td2RC, .RcReview             .td3RC, .RcReview             .td4RC { background-color:Peru; }
+.RcStable             .th1RC, .RcStable             .td2RC, .RcStable             .td3RC, .RcStable             .td4RC { background-color:Chocolate; }
+.RcOversight          .th1RC, .RcOversight          .td2RC, .RcOversight          .td3RC, .RcOversight          .td4RC { background-color:Purple; }
+.RcCheckuser          .th1RC, .RcCheckuser          .td2RC, .RcCheckuser          .td3RC, .RcCheckuser          .td4RC { background-color:Thistle; }
+.RcEducationProgram   .th1RC, .RcEducationProgram   .td2RC, .RcEducationProgram   .td3RC, .RcEducationProgram   .td4RC { background-color:PeachPuff; }
+.RcLiquidThreads      .th1RC, .RcLiquidThreads      .td2RC, .RcLiquidThreads      .td3RC, .RcLiquidThreads      .td4RC { background-color:LightCyan; }
+.RcPageTranslation    .th1RC, .RcPageTranslation    .td2RC, .RcPageTranslation    .td3RC, .RcPageTranslation    .td4RC { background-color:RosyBrown; }
+.RcTranslatorSandbox  .th1RC, .RcTranslatorSandbox  .td2RC, .RcTranslatorSandbox  .td3RC, .RcTranslatorSandbox  .td4RC { background-color:RosyBrown; }
+.RcTranslationReview  .th1RC, .RcTranslationReview  .td2RC, .RcTranslationReview  .td3RC, .RcTranslationReview  .td4RC { background-color:RosyBrown; }
+.RcNotifyTranslators  .th1RC, .RcNotifyTranslators  .td2RC, .RcNotifyTranslators  .td3RC, .RcNotifyTranslators  .td4RC { background-color:RosyBrown; }
+.RcOAuth              .th1RC, .RcOAuth              .td2RC, .RcOAuth              .td3RC, .RcOAuth              .td4RC { background-color:MistyRose; }
+.RcMoodBar            .th1RC, .RcMoodBar            .td2RC, .RcMoodBar            .td3RC, .RcMoodBar            .td4RC { background-color:DarkKhaki; }
+
+.RcLog     .th0RC { background-color:LightBlue; }
+.RcWatched .th0RC { border:3px solid gold !important; } 
+.RcContact .th0RC { border:3px solid gold !important; } 
+
+.RcNotification  .th0RC, .RcNotification .th1RC { background-color:IndianRed;color:white; }
+.RcNew         .th1RC { background-color:#bdffb2;border:3px solid Lime !important; } 
+.RcNotReviewed .th1RC { border:3px solid red !important; }
+ 
+.RcReverted    .td2RC { border:3px solid red !important; } 
+
+.RcNewbie    .td2RC, .RcNewbie    .td3RC, .RcNewbie    .td4RC { background-color:#bdffb2; } 
+.RcIp        .td2RC, .RcIp        .td3RC, .RcIp        .td4RC { background-color:white; } 
+.RcPatrolled .td2RC, .RcPatrolled .td3RC, .RcPatrolled .td4RC { background-color:#b2b2b2; } 
+.RcSelf      .td2RC, .RcSelf      .td3RC, .RcSelf      .td4RC { background-color:#a0b0e0 !important; } 
+
+.RcTag .td3RC { border:2px solid red !important; }
+
+.Rctd5NotEmpty .td5RC {  background-color:Cornsilk;}
+.RcRevert      .td5RC { border:3px solid red !important; } 
+.RcReplaced    .td5RC { border:3px solid orange !important; } 
+.RcBlanking    .td5RC { border:3px solid white !important; } 
+
+.RcExternal th, .RcExternal td { background-color:#CFBE90; } 
+.RcChecked  th, .RcChecked  td { background-color:#FFFFE0 !important; }
+
+
+
+/* Couleurs liens */
+
+ .hidelineLink               { padding:3px;color:red; } 
+
+ .diffDiffLink               { color:orange; }
+ .newpageDiffLink            { color:green; }
+ .uploadDiffLink             { color:darkslateblue; }
+ .newuserDiffLink            { color:darkGreen; }
+ .blockDiffLink              { color:darkgoldenrod; }
+ .gbblockDiffLink            { color:darkgoldenrod; }
+ .deleteDiffLink             { color:saddlebrown; }
+ .moveDiffLink               { color:black; }
+ .protectDiffLink            { color:darkslategray; }
+ .feedbackDiffLink           { color:RoyalBlue; }
+ .abfilterDiffLink           { color:darkslategray; }
+ .abfilterdiffDiffLink       { color:red; }
+ .renameuserDiffLink         { color:SlateGray; }
+ .userrightsDiffLink         { color:DeepSkyBlue; }
+ .gbuserrightsDiffLink       { color:DeepSkyBlue; }
+ .thanksDiffLink             { color:IndianRed; }
+ .massmessageDiffLink        { color:white; }
+ .pagetriageDeletionDiffLink { color:darkRed; }
+ .pagetriageCurationDiffLink { color:MidnightBlue; }
+ .reviewDiffLink             { color:black; }
+ .reviewdiffDiffLink         { color:red; }
+ .stableDiffLink             { color:white; }
+ .oversightDiffLink          { color:white; }
+ .checkuserDiffLink          { color:Indigo; }
+ .educationprogramDiffLink   { color:DarkSlateGray; }
+ .liquidthreadsDiffLink      { color:Teal; }
+ .translationreviewDiffLink  { color:white; }
+ .translatorsandboxDiffLink  { color:white; }
+ .notifytranslatorsDiffLink  { color:white; }
+ .pagetranslationDiffLink    { color:white; }
+ .mwoauthconsumerDiffLink    { color:MediumOrchid; }
+ .moodbarDiffLink            { color:SaddleBrown; }
+
+ .historyLink                { color:darkorange; }
+ .editLink                   { color:OrangeRed; }
+ .pagewatchLink              { color:RoyalBlue; }
+ .pageunwatchLink            { color:RoyalBlue; }
+ .moveLink                   { color:tomato; }
+ .deleteLink                 { color:orangered; }
+ .protectLink                { color:coral; }
+ .stableLink                 { color:Chocolate; }
+ .pagetalkLink               { color:seagreen; }
+
+ .usertalkLink               { color:seagreen; }
+ .usercontribLink            { color:#43CD80; }
+ .userdeletedcontribLink     { color:#43CD80; }
+ .userwatchLink              { color:black; }
+ .userunwatchLink            { color:#AAAA00; }
+ .userblockLink              { color:seagreen; }
+ .userhideLink               { color:grey; }
+
+#tabRC .tagTemplate { color: red; font-weight: bold; }
